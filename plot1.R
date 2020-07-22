@@ -1,7 +1,5 @@
 #load data
-fileurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-download.file(fileurl, destfile = "household.txt", method="curl")
-#download only the rows corresponding to 2/1/07 to 2/2/07
+#load only the rows corresponding to 2/1/07 to 2/2/07 from downloaded and unzipped file
 data <- read.table("household.txt", header = FALSE, sep = ";", 
                    skip=grep("1/2/2007", readLines("household_power_consumption.txt")), 
                    nrows = 2879)
